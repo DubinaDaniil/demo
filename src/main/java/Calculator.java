@@ -85,7 +85,13 @@ public class Calculator {
     }
 
     private static boolean isNumber(String string) {
-        return string.matches("-?\\d+");
+//        return string.matches("-?\\d+");
+        try {
+            Integer.parseInt(string);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
     }
 
     private static void count(final int actionNumber, final int firstNumber, final int secondNumber) {
