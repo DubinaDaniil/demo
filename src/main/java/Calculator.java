@@ -73,7 +73,8 @@ public class Calculator {
             if (string.equalsIgnoreCase(STOP)) {
                 System.out.println(CALCULATOR_IS_CLOSE);
                 System.exit(0);
-            } else if (StringUtils.isNumeric(string)) {
+//            } else if (StringUtils.isNumeric(string)) {
+            } else if (isNumber(string)) {
                 number = Integer.parseInt(string);
                 isCorrect = false;
             } else {
@@ -81,6 +82,10 @@ public class Calculator {
             }
         }
         return number;
+    }
+
+    private static boolean isNumber(String string) {
+        return string.matches("-?\\d+");
     }
 
     private static void count(final int actionNumber, final int firstNumber, final int secondNumber) {
